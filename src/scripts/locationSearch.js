@@ -1,10 +1,10 @@
-import getWeatherData from './weatherData';
+import displayWeatherData from './weatherUI';
 import { inputCity, inputBtn } from './selectors';
 
 const handleLocationSearch = async (e) => {
   e.preventDefault();
   try {
-    await getWeatherData(inputCity.value);
+    await displayWeatherData(inputCity.value);
     inputCity.value = '';
   } catch (err) {
     console.error(err);

@@ -5,7 +5,7 @@ const getWeatherData = async (city) => {
     const rawWeatherData = await fetchWeatherData(city);
 
     const {
-      resolvedAddress: location,
+      address: location,
       currentConditions: {
         conditions: condition,
         icon,
@@ -18,7 +18,7 @@ const getWeatherData = async (city) => {
       },
     } = rawWeatherData;
 
-    const weatherData = {
+    return {
       location,
       condition,
       icon,
@@ -29,15 +29,10 @@ const getWeatherData = async (city) => {
       precip,
       windspeed,
     };
-
-    console.log(weatherData.location);
-    return weatherData;
   } catch (err) {
     console.error(err);
     return { error: err.message };
   }
 };
-
-getWeatherData('Manila');
 
 export default getWeatherData;
