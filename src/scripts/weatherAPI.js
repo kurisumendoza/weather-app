@@ -4,34 +4,7 @@ const fetchWeatherData = async (city) => {
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=us&key=JKGN7CSFMAF2M6X9W97ETTSYR&contentType=json`,
       { mode: 'cors' },
     );
-
-    const rawWeatherData = await response.json();
-
-    const {
-      resolvedAddress: location,
-      currentConditions: {
-        conditions: condition,
-        icon,
-        sunrise,
-        sunset,
-        temp,
-        humidity,
-        precip,
-        windspeed,
-      },
-    } = rawWeatherData;
-
-    return {
-      location,
-      condition,
-      icon,
-      sunrise,
-      sunset,
-      temp,
-      humidity,
-      precip,
-      windspeed,
-    };
+    return await response.json();
   } catch (err) {
     console.error(err);
     return { error: err.message };
