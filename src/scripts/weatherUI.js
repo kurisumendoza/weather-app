@@ -19,6 +19,12 @@ const displayWeatherData = async (city) => {
 
     weatherDataUI.icon.src = weatherIcons[weatherData.icon];
 
+    weatherDataUI.sunriseIcon.src = weatherIcons.sunrise;
+    weatherDataUI.sunsetIcon.src = weatherIcons.sunset;
+    weatherDataUI.humidityIcon.src = weatherIcons.humidity;
+    weatherDataUI.precipIcon.src = weatherIcons.precipitation;
+    weatherDataUI.windspeedIcon.src = weatherIcons.windspeed;
+
     weatherDataKeys.forEach(({ key, element, unit }) => {
       const el = element;
       el.innerText = `${weatherData[key]} ${unit || ''}`;

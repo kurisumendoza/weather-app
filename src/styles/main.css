@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --morning: rgb(162, 210, 223);
+  --afternoon: rgb(223, 151, 85);
+  --evening: rgb(66, 72, 116);
+  --night: rgb(24, 18, 43);
+
+  --drop-shadow: rgb(29, 25, 42);
+
+  --font: 'Happy Monkey', serif;
+}
+
+body {
+  background-color: var(--morning);
+  font-family: var(--font);
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--morning);
+  filter: brightness(0.75);
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10% 0;
+  padding: 50px;
+  border: 4px solid black;
+  border-radius: 10px;
+  background-color: var(--morning);
+  box-shadow: -2.5px 2.5px 5px var(--drop-shadow);
+  font-size: 1.25rem;
+  min-height: 300px;
+  min-width: 300px;
+}
+
+form {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+form > input[type='text'],
+form > input[type='submit'] {
+  border: 3px solid black;
+  padding: 0.5rem;
+  font-family: var(--font);
+  font-size: 1rem;
+}
+
+form > input[type='text'] {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: 0px;
+}
+
+form > input[type='text']:focus {
+  outline: none;
+}
+
+form > input[type='submit'] {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.weather-display {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    'location location icon'
+    'temp temp icon'
+    'condition condition icon'
+    'day-cycle day-cycle day-cycle'
+    'humidity precip windspeed';
+}
+
+.icon {
+  grid-area: icon;
+  transform: scale(1.25);
+}
+
+.location {
+  grid-area: location;
+  font-size: 2.5rem;
+}
+
+.temp {
+  grid-area: temp;
+  font-size: 4rem;
+  margin-top: -10px;
+  margin-bottom: -5px;
+}
+
+.condition {
+  grid-area: condition;
+  margin-bottom: 10px;
+}
+
+.location,
+.temp,
+.condition {
+  font-weight: bold;
+}
+
+.day-cycle {
+  grid-area: day-cycle;
+  display: flex;
+  justify-content: space-around;
+}
+
+.sunrise-wrap,
+.sunset-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.humidity-wrap {
+  grid-area: humidity;
+}
+
+.precip-wrap {
+  grid-area: precip;
+}
+
+.windspeed-wrap {
+  grid-area: windspeed;
+}
+
+.humidity-wrap,
+.precip-wrap,
+.windspeed-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sunrise-icon,
+.sunset-icon,
+.humidity-icon,
+.precip-icon,
+.windspeed-icon {
+  width: 2rem;
+}

@@ -7,8 +7,13 @@ export const weatherDataUI = {
   temp: document.querySelector('.temp'),
   condition: document.querySelector('.condition'),
   sunrise: document.querySelector('.sunrise'),
+  sunriseIcon: document.querySelector('.sunrise-icon'),
   sunset: document.querySelector('.sunset'),
+  sunsetIcon: document.querySelector('.sunset-icon'),
   humidity: document.querySelector('.humidity'),
+  humidityIcon: document.querySelector('.humidity-icon'),
   precip: document.querySelector('.precip'),
+  precipIcon: document.querySelector('.precip-icon'),
   windspeed: document.querySelector('.windspeed'),
+  windspeedIcon: document.querySelector('.windspeed-icon'),
 };
