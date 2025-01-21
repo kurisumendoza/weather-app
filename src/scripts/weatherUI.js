@@ -1,5 +1,7 @@
 import getWeatherData from './weatherData';
+import renderError from './errorsUI';
 import weatherIcons from './weatherIcons';
+import { errors, toggleElement } from './helpers';
 import { weatherDataUI } from './selectors';
 
 const displayWeatherData = async (city) => {
@@ -29,8 +31,13 @@ const displayWeatherData = async (city) => {
       const el = element;
       el.innerText = `${weatherData[key]} ${unit || ''}`;
     });
+
+    toggleElement(weatherDataUI.errorDisplay, '');
+    toggleElement(weatherDataUI.container, '');
   } catch (err) {
-    console.error(err);
+    if (err.message === errors.cityNotFound)
+      renderError(err.message, weatherIcons.notFound);
+    if (err.message === errors.noInternet) renderError(err.message);
   }
 };
 

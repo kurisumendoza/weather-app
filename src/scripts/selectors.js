@@ -1,7 +1,8 @@
-export const inputCity = document.querySelector('input[type=text]');
-export const inputBtn = document.querySelector('input[type=submit]');
+const inputCity = document.querySelector('input[type=text]');
+const inputBtn = document.querySelector('input[type=submit]');
 
-export const weatherDataUI = {
+const weatherDataUI = {
+  container: document.querySelector('.weather-display'),
   icon: document.querySelector('.icon'),
   location: document.querySelector('.location'),
   temp: document.querySelector('.temp'),
@@ -16,4 +17,9 @@ export const weatherDataUI = {
   precipIcon: document.querySelector('.precip-icon'),
   windspeed: document.querySelector('.windspeed'),
   windspeedIcon: document.querySelector('.windspeed-icon'),
+  errorDisplay: document.querySelector('.error-display'),
+  errorIcon: document.querySelector('.error-icon'),
+  errorMessage: document.querySelector('.error-message'),
 };
+
+export { inputCity, inputBtn, weatherDataUI };

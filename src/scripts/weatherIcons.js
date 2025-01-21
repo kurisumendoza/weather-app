@@ -11,12 +11,13 @@ const iconURL = {
   snow: 'https://cdn-icons-png.flaticon.com/128/2204/2204343.png',
   thunder: 'https://cdn-icons-png.flaticon.com/128/2204/2204340.png',
   wind: 'https://cdn-icons-png.flaticon.com/128/2204/2204344.png',
-
+  // Non dynamic icons
   sunrise: 'https://cdn-icons-png.flaticon.com/128/1164/1164936.png',
   sunset: 'https://cdn-icons-png.flaticon.com/128/1164/1164939.png',
   humidity: 'https://cdn-icons-png.flaticon.com/128/3740/3740365.png',
   precipitation: 'https://cdn-icons-png.flaticon.com/128/10873/10873807.png',
   windspeed: 'https://cdn-icons-png.flaticon.com/128/1135/1135762.png',
+  notFound: 'https://cdn-icons-png.flaticon.com/128/4308/4308097.png',
 };
 
 const weatherIcons = {
@@ -36,12 +37,14 @@ const weatherIcons = {
   'thunder-showers-day': iconURL.thunder,
   'thunder-showers-night': iconURL.thunder,
   wind: iconURL.wind,
-
+  // Non dynamic icons
   sunrise: iconURL.sunrise,
   sunset: iconURL.sunset,
   humidity: iconURL.humidity,
   precipitation: iconURL.precipitation,
   windspeed: iconURL.windspeed,
+  noInternet: iconURL.noInternet,
+  notFound: iconURL.notFound,
 };
 
 export default weatherIcons;

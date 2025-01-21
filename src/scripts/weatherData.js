@@ -31,7 +31,7 @@ const getWeatherData = async (city) => {
     };
   } catch (err) {
     console.error(err);
-    return { error: err.message };
+    throw err;
   }
 };
 
