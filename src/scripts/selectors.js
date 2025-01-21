@@ -1,6 +1,8 @@
 const inputCity = document.querySelector('input[type=text]');
 const inputBtn = document.querySelector('input[type=submit]');
 
+const loader = document.querySelector('.loader');
+
 const weatherDataUI = {
   container: document.querySelector('.weather-display'),
   icon: document.querySelector('.icon'),
@@ -22,4 +24,4 @@ const weatherDataUI = {
   errorMessage: document.querySelector('.error-message'),
 };
 
-export { inputCity, inputBtn, weatherDataUI };
+export { inputCity, inputBtn, loader, weatherDataUI };

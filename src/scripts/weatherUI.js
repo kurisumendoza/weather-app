@@ -2,10 +2,14 @@ import getWeatherData from './weatherData';
 import renderError from './errorsUI';
 import weatherIcons from './weatherIcons';
 import { errors, toggleElement } from './helpers';
-import { weatherDataUI } from './selectors';
+import { loader, weatherDataUI } from './selectors';
 import changeColorScheme from './colorScheme';
 
 const displayWeatherData = async (city) => {
+  toggleElement(loader, 'inline-block');
+  toggleElement(weatherDataUI.errorDisplay, '');
+  toggleElement(weatherDataUI.container, 'none');
+
   try {
     const weatherData = await getWeatherData(city);
 
@@ -30,12 +34,12 @@ const displayWeatherData = async (city) => {
 
     weatherDataKeys.forEach(({ key, element, unit }) => {
       const el = element;
-      el.innerText = `${weatherData[key]} ${unit || ''}`;
+      el.innerText = `${weatherData[key] || 0} ${unit || ''}`;
     });
 
     changeColorScheme(weatherData.timezone);
 
-    toggleElement(weatherDataUI.errorDisplay, '');
+    toggleElement(loader, '');
     toggleElement(weatherDataUI.container, '');
   } catch (err) {
     if (err.message === errors.cityNotFound)
