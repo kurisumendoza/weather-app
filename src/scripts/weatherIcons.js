@@ -43,7 +43,6 @@ const weatherIcons = {
   humidity: iconURL.humidity,
   precipitation: iconURL.precipitation,
   windspeed: iconURL.windspeed,
-  noInternet: iconURL.noInternet,
   notFound: iconURL.notFound,
 };
 

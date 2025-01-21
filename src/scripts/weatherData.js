@@ -6,6 +6,7 @@ const getWeatherData = async (city) => {
 
     const {
       address: location,
+      timezone,
       currentConditions: {
         conditions: condition,
         icon,
@@ -20,6 +21,7 @@ const getWeatherData = async (city) => {
 
     return {
       location,
+      timezone,
       condition,
       icon,
       sunrise,

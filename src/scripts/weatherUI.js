@@ -3,6 +3,7 @@ import renderError from './errorsUI';
 import weatherIcons from './weatherIcons';
 import { errors, toggleElement } from './helpers';
 import { weatherDataUI } from './selectors';
+import changeColorScheme from './colorScheme';
 
 const displayWeatherData = async (city) => {
   try {
@@ -31,6 +32,8 @@ const displayWeatherData = async (city) => {
       const el = element;
       el.innerText = `${weatherData[key]} ${unit || ''}`;
     });
+
+    changeColorScheme(weatherData.timezone);
 
     toggleElement(weatherDataUI.errorDisplay, '');
     toggleElement(weatherDataUI.container, '');
