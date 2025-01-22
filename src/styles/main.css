@@ -62,25 +62,25 @@ form {
   margin-bottom: 30px;
 }
 
-form > input[type='text'],
-form > input[type='submit'] {
+.city-input,
+.city-submit {
   border: 3px solid var(--font-and-borders);
   padding: 0.5rem;
   font-family: var(--font);
   font-size: 1rem;
 }
 
-form > input[type='text'] {
+.city-input {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-right: 0px;
 }
 
-form > input[type='text']:focus {
+.city-input:focus {
   outline: none;
 }
 
-form > input[type='submit'] {
+.city-submit {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   font-weight: bold;

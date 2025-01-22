@@ -1,5 +1,5 @@
-const inputCity = document.querySelector('input[type=text]');
-const inputBtn = document.querySelector('input[type=submit]');
+const inputCity = document.querySelector('.city-input');
+const inputBtn = document.querySelector('.city-submit');
 
 const loader = document.querySelector('.loader');
 
